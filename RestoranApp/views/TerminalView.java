@@ -40,7 +40,7 @@ public class TerminalView implements TerminalMenus{
                     System.out.println("Terima kasih!");
                     break;
                 default:
-                    System,out.println("Pilihan tidak valid.");
+                    System.out.println("Pilihan tidak valid.");
             }
         }while (pilihan != 3);
     }
