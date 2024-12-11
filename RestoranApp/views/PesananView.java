@@ -35,13 +35,13 @@ public class PesananView implements PesananViewInterface {
                     buatPesanan(scanner);
                     break;
                 case 2:
-                    ();
+                    lihatPesanan();
                     break;
                 case 3:
-                    (scanner);
+                    updatePesanan(scanner);
                     break;
                 case 4:
-                    (scanner);
+                    hapusPesanan(scanner);
                     break;
                 case 5:
                     System.out.println("Terima kasih!");
@@ -63,3 +63,40 @@ public class PesananView implements PesananViewInterface {
 
         pesananService.buatPesanan(namaPembeli, item, kuantitas);
     }
+    private void lihatPesanan() {
+        List<Pesanan> pesananList = pesananService.lihatSemuaPesanan();
+        if (pesananList.isEmpty()) {
+            System.out.println("Tidak ada pesanan.");
+        } else {
+            for (int i = 0; i < pesananList.size(); i++) {
+                System.out.println("[" + i + "] " + pesananList.get(i));
+            }
+        }
+    }
+
+    private void updatePesanan(Scanner scanner) {
+        lihatPesanan();
+        System.out.print("Masukkan indeks pesanan yang ingin diperbarui: ");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Masukkan nama pemesan baru: ");
+        String nama = scanner.nextLine();
+        System.out.print("Masukkan item baru: ");
+        String item = scanner.nextLine();
+        System.out.print("Masukkan kuantitas baru: ");
+        int kuantitas = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Masukkan status baru: ");
+        String status = scanner.nextLine();
+
+        pesananService.updatePesanan(index, nama ,item, kuantitas, status);
+    }
+
+    private void hapusPesanan(Scanner scanner) {
+        lihatPesanan();
+        System.out.print("Masukkan indeks pesanan yang ingin dihapus: ");
+        int index = scanner.nextInt();
+        scanner.nextLine();
+        pesananService.hapusPesanan(index);
+    }
+}
