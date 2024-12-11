@@ -26,3 +26,23 @@ public class TerminalView implements TerminalMenus{
             System.out.print("Pilih peran: ");
             pilihan = scanner.nextInt();
             scanner.nextLine();
+
+            switch (pilihan) {
+                case 1:
+                    System.out.println("Anda masuk sebagai Pembeli.");
+                    pesananView.displayMenu();
+                    break;
+                case 2:
+                    System.out.println("Anda masuk sebagai Penjual.");
+                    pesananOnlineView.displayMenu();
+                    break;
+                case 3:
+                    System.out.println("Terima kasih!");
+                    break;
+                default:
+                    System.out.println("Pilihan tidak valid.");
+            }
+        }while (pilihan != 3);
+    }
+
+}
