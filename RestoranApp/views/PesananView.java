@@ -52,3 +52,14 @@ public class PesananView implements PesananViewInterface {
         } while (pilihan != 5);
     }
 
+    private void buatPesanan(Scanner scanner) {
+        System.out.print("Masukkan nama pembeli: ");
+        String namaPembeli = scanner.nextLine();
+        System.out.print("Masukkan item pesanan: ");
+        String item = scanner.nextLine();
+        System.out.print("Masukkan jumlah: ");
+        int kuantitas = scanner.nextInt();
+        scanner.nextLine();
+
+        pesananService.buatPesanan(namaPembeli, item, kuantitas);
+    }
