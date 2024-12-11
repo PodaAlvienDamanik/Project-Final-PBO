@@ -1,3 +1,4 @@
+
 package RestoranApp.config;
 
 import java.sql.Connection;
@@ -19,6 +20,7 @@ public class Database {
         this.host = host;
         this.port = port;
     }
+
     public Connection getConnection() {
         return connection;
     }
