@@ -19,3 +19,19 @@ public class Database {
         this.host = host;
         this.port = port;
     }
+    public Connection getConnection() {
+        return connection;
+    }
+
+    public void setup() {
+        String mysqlConnUrlTemplate = "jdbc:mysql://%s:%s/%s";
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            connection = DriverManager.getConnection(String.format(mysqlConnUrlTemplate, host, port, dbName), userName, password);
+            System.out.println("Database connected!");
+
+        } catch (SQLException | ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+}
