@@ -35,13 +35,13 @@ public class PesananView implements PesananViewInterface {
                     buatPesanan(scanner);
                     break;
                 case 2:
-                    lihatPesanan();
+                    ();
                     break;
                 case 3:
-                    updatePesanan(scanner);
+                    (scanner);
                     break;
                 case 4:
-                    hapusPesanan(scanner);
+                    (scanner);
                     break;
                 case 5:
                     System.out.println("Terima kasih!");
