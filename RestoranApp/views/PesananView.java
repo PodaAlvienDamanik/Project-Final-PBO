@@ -52,7 +52,24 @@ public class PesananView implements PesananViewInterface {
         } while (pilihan != 5);
     }
 
+    public static void DaftarMenu(){    //dibuat oleh Poda tanggal 12/12/2024 jam 07.44
+        System.out.println("Daftar Menu Restoran Mandalika");
+        System.out.println("====== Daftar Makanan ======");
+        System.out.println("1.Nasi                  Rp.5000");
+        System.out.println("2.Ayam Panggang         Rp.10.000");
+        System.out.println("3.Ayam Goreng           Rp.8.000");
+        System.out.println("4.Gulai Tunjang         Rp.15.000");
+        System.out.println("5.Telor Balado          Rp.10.000");
+        System.out.println("====== Daftar Minuman =======");
+        System.out.println("1.Air Putih             Rp.3000");
+        System.out.println("2.Teh Manis Dingin      Rp.5000");
+        System.out.println("3.Es Jeruk              Rp.6000");
+        System.out.println("4.Aneka Jus             Rp.12.000");
+        System.out.println("5.Es krim               Rp.5000");
+    }
+
     private void buatPesanan(Scanner scanner) {
+        DaftarMenu();
         System.out.print("Masukkan nama pembeli: ");
         String namaPembeli = scanner.nextLine();
         System.out.print("Masukkan item pesanan: ");
@@ -86,10 +103,8 @@ public class PesananView implements PesananViewInterface {
         System.out.print("Masukkan kuantitas baru: ");
         int kuantitas = scanner.nextInt();
         scanner.nextLine();
-        System.out.print("Masukkan status baru: ");
-        String status = scanner.nextLine();
 
-        pesananService.updatePesanan(index, nama ,item, kuantitas, status);
+        pesananService.updatePesanan(index, nama ,item, kuantitas,"Sedang di proses");
     }
 
     private void hapusPesanan(Scanner scanner) {
