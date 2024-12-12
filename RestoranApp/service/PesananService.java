@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Component
-public class PesananService implements PesananServiceInterface {
+public class PesananService implements PesananServiceInterface {//polymorfisme pada interface
     private final PesananRepository repository;
 
     public PesananService(PesananRepository repository) {

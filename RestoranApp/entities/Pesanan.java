@@ -1,3 +1,4 @@
+// src/main/java/com/restoran/entities/Pesanan.java
 package RestoranApp.entities;
 
 public class Pesanan {
@@ -6,6 +7,7 @@ public class Pesanan {
     private int kuantitas;
     private String status;
 
+    //constructor sebagai abstraksi
     public Pesanan(String namaPembeli, String item, int kuantitas, String status) {
         this.namaPembeli = namaPembeli;
         this.item = item;
@@ -13,6 +15,7 @@ public class Pesanan {
         this.status = status;
     }
 
+    //getter and setter encapsulasi
     public String getNamaPembeli() {
         return namaPembeli;
     }
@@ -55,4 +58,3 @@ public class Pesanan {
                 '}';
     }
 }
-
