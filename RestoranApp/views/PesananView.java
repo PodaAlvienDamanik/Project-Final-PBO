@@ -104,7 +104,7 @@ public class PesananView implements PesananViewInterface {
         int kuantitas = scanner.nextInt();
         scanner.nextLine();
 
-        pesananService.updatePesanan(index, nama ,item, kuantitas,"Sedang di proses");
+        pesananService.updatePesanan(index, nama ,item, kuantitas,"Sedang di proses");//07.46 12/12 oleh poda
     }
 
     private void hapusPesanan(Scanner scanner) {
