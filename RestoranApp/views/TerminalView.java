@@ -33,8 +33,11 @@ public class TerminalView implements TerminalMenus{
                     pesananView.displayMenu();
                     break;
                 case 2:
-                    System.out.println("Anda masuk sebagai Penjual.");
-                    pesananOnlineView.displayMenu();
+                    if (inputPenjual(scanner)) { //07.20 12 december oleh poda
+                        pesananOnlineView.displayMenu();
+                    } else {
+                        System.out.println("Akses ditolak. Username atau password salah.");
+                    }
                     break;
                 case 3:
                     System.out.println("Terima kasih!");
@@ -43,6 +46,24 @@ public class TerminalView implements TerminalMenus{
                     System.out.println("Pilihan tidak valid.");
             }
         }while (pilihan != 3);
+    }
+
+    private static boolean cekUserNamePenjual(String username,int password){ //07.20 12 december oleh poda
+        if (password == 1234){
+            return username.equals("Poda") || username.equals("Arvind") || username.equals("Yesaya");
+        }
+        return false;
+    }
+
+    private static boolean inputPenjual(Scanner input) {
+        System.out.print("Masukkan Username Anda: ");
+        String inputUsername = input.nextLine();
+        System.out.print("Masukkan Password Anda: ");
+        int inputPassword = input.nextInt();
+        input.nextLine();
+        System.out.println("Anda masuk sebagai Penjual.");
+        return cekUserNamePenjual(inputUsername, inputPassword);
+
     }
 
 }
