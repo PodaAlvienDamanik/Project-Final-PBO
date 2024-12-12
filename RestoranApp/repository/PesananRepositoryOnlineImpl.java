@@ -79,7 +79,8 @@ public class PesananRepositoryOnlineImpl implements PesananRepositoryOnline {
     @Override
     public void updatePesananOnline(int index, PesananOnline pesanan) {
         Connection connection = database.getConnection();
-        String sqlStatement = "UPDATE pesanan SET nama = ?, item = ?, kuantitas = ?, status = ? WHERE id = ?";
+        String sqlStatement = "UPDATE pesanan_online SET nama = ?, item = ?, kuantitas = ?, status = ? WHERE id = ?";//19.02 oleh poda
+
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
@@ -105,7 +106,8 @@ public class PesananRepositoryOnlineImpl implements PesananRepositoryOnline {
         int id = -1;
 
         Connection connection = database.getConnection();
-        String sqlStatement = "SELECT id FROM pesanan WHERE nama = ? AND item = ? AND kuantitas = ? AND status = ?";
+        String sqlStatement = "SELECT id FROM pesanan_online WHERE nama = ? AND item = ? AND kuantitas = ? AND status = ?";//19.02 oleh poda
+
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlStatement);
